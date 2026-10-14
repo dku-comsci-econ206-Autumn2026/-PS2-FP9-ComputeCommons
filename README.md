@@ -4,7 +4,16 @@
 
 Review snapshot: `ps2-review-2026-09-27`. Solo team. This package contains an English proposal, synthetic computational demonstration, a self-contained executed notebook and a Hugging Face-ready static behavioral interaction. It extends the author's classroom second-price inference-auction proposal and the PS1 distinction between consultation and binding participation.
 
-Live Page：https://huggingface.co/spaces/dku-comsci-econ206-2026/Xinrong_Sun
+## Live Demo
+
+**[🤗 Open the Hugging Face Live Space](https://huggingface.co/spaces/dku-comsci-econ206-2026/Xinrong_Sun)**
+
+## Poster
+
+[View or download the full-resolution poster (PDF)](PS2-FP9-ComputeCommons-A0-Poster.pdf)
+
+[![Compute Commons research poster](https://github.com/user-attachments/assets/5b5d52c9-b6f2-4630-b0de-69b7361eea26)](PS2-FP9-ComputeCommons-A0-Poster.pdf)
+
 
 ## Reproduce the actual results
 
