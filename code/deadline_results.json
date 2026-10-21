@@ -1,0 +1,149 @@
+{
+  "version": "final-fp9-2026-10-21",
+  "seed": 20614,
+  "batches": 300,
+  "agents": 3,
+  "deviations": 88200,
+  "max_profitable_gain": 0,
+  "witness": null,
+  "scope": "Joint value/deadline reports only; execution uses reported EDF order but utility uses actual deadlines; fixed public service times, rivals, eligibility and finite values. Late winners still pay. Not a test of general telemetry fraud.",
+  "duration_counterexample": {
+    "true_service_ms": [
+      200,
+      100,
+      100
+    ],
+    "reported_service_ms": [
+      100,
+      100,
+      100
+    ],
+    "values": [
+      10,
+      9,
+      8
+    ],
+    "horizon": 300,
+    "honest": {
+      "allocated": [
+        "A",
+        "B"
+      ],
+      "order": [
+        "A",
+        "B"
+      ],
+      "completed": [
+        "A",
+        "B"
+      ],
+      "payments": [
+        8,
+        8,
+        0.0
+      ],
+      "utilities": [
+        2,
+        1,
+        0.0
+      ],
+      "realized_value": 19,
+      "nominal_value": 19,
+      "revenue": 16.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 200,
+          "deadline_ms": 300,
+          "timely": true
+        },
+        {
+          "id": "B",
+          "finish_ms": 300,
+          "deadline_ms": 300,
+          "timely": true
+        }
+      ]
+    },
+    "reported_allocation": {
+      "allocated": [
+        "A",
+        "B",
+        "C"
+      ],
+      "order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "completed": [
+        "A",
+        "B",
+        "C"
+      ],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        10,
+        9,
+        8
+      ],
+      "realized_value": 27,
+      "nominal_value": 27,
+      "revenue": 0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 100,
+          "deadline_ms": 300,
+          "timely": true
+        },
+        {
+          "id": "B",
+          "finish_ms": 200,
+          "deadline_ms": 300,
+          "timely": true
+        },
+        {
+          "id": "C",
+          "finish_ms": 300,
+          "deadline_ms": 300,
+          "timely": true
+        }
+      ]
+    },
+    "actual_execution": [
+      {
+        "id": "A",
+        "finish_ms": 200,
+        "timely": true
+      },
+      {
+        "id": "B",
+        "finish_ms": 300,
+        "timely": true
+      },
+      {
+        "id": "C",
+        "finish_ms": 400,
+        "timely": false
+      }
+    ],
+    "liar_actual_utility": 10,
+    "honest_utility": 2,
+    "gain": 8
+  }
+}

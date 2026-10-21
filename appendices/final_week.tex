@@ -1,0 +1,95 @@
+\clearpage\onecolumn
+\section{Final Week Evidence and Final Release Audit}
+\subsection{Self-challenge: deadline reports and execution time}
+\textbf{Question, Xinrong Sun, October 14.} Can an operator improve her payoff by reporting false deadline information? The original value-DSIC proof fixes telemetry. The final computation therefore evaluates joint changes in value bids and reported deadlines while computing utility from actual deadlines. It uses 300 seeded three-robot batches, bids 0--13, reported deadlines 1--7, service times 1 or 2, true values 1--12, true deadlines 1--6, horizon 6 and credit 0 or 2. All 88,200 deviations have gain at most zero. Units here are normalized time units. The finite test is a diagnostic, not a general theorem.
+
+\textbf{Conditional argument.} Fix truthful rivals, verified durations and eligibility. Let $H^0$ be the best rival score without $i$ and $H^1(d)$ the best rival score in a feasible set containing $i$ with its true deadline $d$. The honest critical price is $p=\max(0,H^0-H^1(d)-ce_i)$. Consider any bid/deadline deviation. Losing yields zero. A winner finishing after its true deadline has utility $-p'\leq0$. If a deviating winner finishes on time, the selected schedule is also feasible with its true deadline; its rivals' score equals the reported conditional optimum $H^1(\hat d)$ because the bidder's own score is constant across all sets containing it. Thus $H^1(\hat d)\leq H^1(d)$ and $p'\geq p$. If honest reporting wins, the deviation cannot improve its utility; if honest reporting loses, $v_i\leq p$ (including ties), so the deviation cannot give positive utility. This extends the threshold reasoning only to an operator's own deadline and bid, under exact allocation, fixed other feasibility data and nonrefundable charges for late service. It is not a new general scheduling theorem or a guarantee for arbitrary telemetry.
+
+\textbf{Duration counterexample.} Three jobs $A,B,C$ have values $(10,9,8)$, actual service times $(200,100,100)$ ms and deadlines 300 ms; the horizon is 300 ms and credits are zero. Honest allocation chooses $A,B$, with $A$ paying 8 and receiving utility 2. If $A$ reports 100 ms, the mechanism admits all three and charges $A$ zero. Real execution in the reported EDF/index order finishes at $(200,300,400)$ ms. $A$ is timely and gains 8 utility units; $C$ is late. Public execution-time verification is consequential. The implementation records reported allocation and actual execution separately, avoiding the mistake of evaluating physical utility using the false report.
+
+\subsection{Intellectual Merits: annotated research/model diagram}
+\begin{figure}[h]\centering
+\begin{tikzpicture}[n/.style={draw=CourseBlue,rounded corners,align=left,text width=5.0cm,minimum height=2.6cm,inner sep=8pt},>=Stealth]
+\node[n] (a) {\textbf{Inherited foundation}\\RTC: asynchronous action chunks.\\Armory: dynamic robot batching.\\Themis: GPU auctions/fairness.\\Critical payments: standard theory.};
+\node[n,right=0.4cm of a] (b) {\textbf{Project contribution}\\Usable-service valuation.\\Queue and pose constraints.\\Entrant-credit value trade-off.\\Separate deadline and duration reports.};
+\node[n,right=0.4cm of b] (c) {\textbf{Supporting evidence}\\Worked value: $10\to18$.\\Credit 3: value $18\to16$.\\300 paired batches.\\88,200 deviations; duration gain 8.};
+\draw[->,thick] (a)--(b);\draw[->,thick] (b)--(c);
+\end{tikzpicture}
+\caption{The inherited algorithms are not reproduced; arrows indicate conceptual dependence, not performance superiority. All project outcomes are synthetic.}
+\end{figure}
+\small
+\noindent\begin{tabularx}{\textwidth}{p{.15\textwidth}YYY}\toprule
+Closest work & Method and objective & Evidence in that work & Difference and boundary here\\\midrule
+RTC & Asynchronous chunk execution; delay robustness & Simulation and robot manipulation & We allocate among private-value operators; no policy-level comparison.\\
+Armory & Closed-loop batching; executed robot time with optional weights & Simulated and real robot fleets & We study payment incentives and usable entrant access in a static abstraction. A common dynamic benchmark is future work.\\
+Themis & Auction-based GPU allocation; finish-time fairness & ML workload evaluation & Our feasibility depends on robot state; access is measured after timely delivery. No broad compute-auction novelty.\\\bottomrule
+\end{tabularx}
+\normalsize
+\paragraph{References for the diagram.}
+Kevin Black, Manuel Y. Galliker and Sergey Levine (2025). \emph{Real-Time Execution of Action Chunking Flow Policies}. NeurIPS 2025. \url{https://doi.org/10.48550/arXiv.2506.07339}.
+Rohan Bansal, David He, Nadun Ranawaka Arachchige, Zhenyang Chen, Soobum Kim, Kexin Rong and Danfei Xu (2026). \emph{Action Chunk Scheduling for Batched Robot Policy Serving}. \url{https://doi.org/10.48550/arXiv.2608.00337}.
+Kshiteej Mahajan, Arjun Balasubramanian, Arjun Singhvi, Shivaram Venkataraman, Aditya Akella, Amar Phanishayee and Shuchi Chawla (2020). \emph{Themis: Fair and Efficient GPU Cluster Scheduling}. NSDI, 289--304. \url{https://www.usenix.org/conference/nsdi20/presentation/mahajan}.
+
+\clearpage
+\subsection{Practical Impacts: mechanisms, indicators and safeguards}
+\begin{figure}[h]\centering
+\begin{tikzpicture}[n/.style={draw=CourseTeal,rounded corners,align=left,text width=4.95cm,minimum height=2.5cm,inner sep=9pt},>=Stealth]
+\node[n] (a) {\textbf{Institutional mechanism}\\Verified feasible admission\\Transparent entrant credits\\Publish value/access trade-offs};
+\node[n,right=0.5cm of a] (b) {\textbf{Affected stakeholders}\\Small integrators and operators\\Workers selecting evaluation tasks\\Learners using the demonstration};
+\node[n,right=0.5cm of b] (c) {\includegraphics[width=1.2cm]{images/sdg4.png}\quad\textbf{Target 4.4}\\Technical learning: predict payments and timely completion before and after explanation.};
+\draw[->,thick] (a)--(b);\draw[->,thick] (b)--(c);
+\end{tikzpicture}
+\caption{Intended impact pathway. Operational outcomes are synthetic; the educational link is a proposed test. SDG icon is an official UN asset, not a certification or endorsement.}
+\end{figure}
+\noindent\begin{tabularx}{\textwidth}{p{.18\textwidth}YYY}\toprule
+Outcome & Indicator and baseline & Evidence & Risk and safeguard\\\midrule
+Usable service & Timely jobs and task value versus capacity-only and EDF & Worked batch and 300 synthetic batches & Deadlines do not ensure safety; retain protective control and calibrate traces.\\
+Entrant access & Eligible entrants completing on time; compare credit 0 and 3 & Worked credit changes winner $D$ to $E$, value 18 to 16 & Favoritism and efficiency loss; disclose eligibility, publish trade-offs, permit correction.\\
+Worker authority & Reserved ms and actual worker-selected completed evaluations & Time reservation modeled; benefit not measured & Idle reserves or displaced service; log use and provide an appeal route.\\
+SDG 4.4 learning & Payment error and completion-prediction accuracy before/after instruction, versus payment-only tutorial & Testable proposed indicator; no human effect estimate & Confusing winning with safe success; explicit task boundary and comprehension questions.\\\bottomrule
+\end{tabularx}
+\paragraph{Standards and accountability.} Academic evaluation requires reproducible claims and matched baselines. Industry deployment requires end-to-end latency, task-success and solver-overhead measurements. Public institutions require transparent access criteria and opportunities to challenge and correct errors. These standards complement rather than substitute for one another. No voting result is claimed: selecting a worker task is an assumed governance right, not an analyzed voting game.
+\paragraph{Sources.} United Nations (2026), \emph{Goal 4: Quality Education}, Target 4.4, \url{https://sdgs.un.org/goals/goal4}; official icon from \url{https://www.un.org/sustainabledevelopment/news/communications-material/}. Avinatan Hassidim, D\'eborah Marciano, Assaf Romm and Ran I. Shorrer (2017), \emph{The Mechanism Is Truthful, Why Aren't You?}, AER 107(5), 220--224, \url{https://doi.org/10.1257/aer.p20171027}. Behavioral interpretation is motivated by this literature; its findings are not observations of this project.
+\smallskip\noindent\small The content of this publication has not been approved by the United Nations and does not reflect the views of the United Nations or its officials or Member States.\normalsize
+
+\subsection{Future Research Roadmap: a discriminating next study}
+\begin{figure}[h]\centering
+\begin{tikzpicture}[n/.style={draw=CourseBlue,align=left,text width=4.95cm,minimum height=1.6cm,inner sep=8pt},>=Stealth]
+\node[draw=CourseTeal,align=center,text width=16.8cm,inner sep=7pt] (q) {\textbf{Current boundary: deadline-only reports survive the stated test; private duration can gain 8.}\\Which verification rule preserves incentives without excluding small operators?};
+\node[n,below=0.6cm of q,xshift=-5.8cm] (e) {\textbf{Economics}\\Audit duration reports and bound profitable deviations.};
+\node[n,right=0.35cm of e] (c) {\textbf{Computer science}\\Replay matched workloads; include batching and solver latency.};
+\node[n,right=0.35cm of c] (b) {\textbf{Behavioral science}\\\includegraphics[width=.65cm]{images/sdg4.png}\quad\textbf{4.4}: test explanations and prediction accuracy.};
+\draw[->] (q.south)--(e.north);\draw[->] (q.south)--(c.north);\draw[->] (q.south)--(b.north);
+\end{tikzpicture}
+\caption{New final-project roadmap. Branches specify complementary tests; none represents completed deployment or a causal human-study finding.}
+\end{figure}
+
+\clearpage
+\noindent\begin{tabularx}{\textwidth}{p{.13\textwidth}YYYY}\toprule
+Study & Question and method/data & Possible collaborator & Progress criterion & Milestone\\\midrule
+Economics & Can audited execution time deter joint reports? Exact small-instance enumeration, bounded penalty and audit-cost sensitivity. & Mechanism-design mentor; no collaboration claimed & Identify a violation or prove a stated incentive domain; report access cost & Reproducible counterexample suite and candidate audit rule before scaling.\\
+Computer science & Does economic allocation add value beyond scheduling? Common simulator with Armory-style batching, fixed workloads and actual solver runtime. & Robotics serving researcher; invitation proposed & Compare timely completion, task value and entrant access at equal resource budgets & First reproduce each baseline on a matched static case; then add dynamics.\\
+Behavioral science & Does explaining deadlines improve comprehension? Counterbalanced payment-only versus deadline-aware tutorial; anonymous consented responses. & FP10 Yiqiao Liu if interested; behavioral mentor & Payment error, timely-prediction accuracy and uncertainty; separate legitimacy & Preregister questions and analysis before a consented pilot; SDG 4.4.\\\bottomrule
+\end{tabularx}
+\paragraph{How the duet informs the roadmap.} The supplied pairing connects FP9's usable robot service to FP10's strategic drone disclosure. The shared issue is whether accurate information and digital access lead to useful physical outcomes. This motivates verifying both the content and timing of reports. The Armory critique specifically motivates the common-workload branch. The author confirmed on October 21 that Yiqiao Liu supplied the Armory critique; her Ed permalink is retained in Appendix D.
+\paragraph{Roadmap references.} Bansal et al. (2026), \emph{Action Chunk Scheduling for Batched Robot Policy Serving}, full reference above, \url{https://doi.org/10.48550/arXiv.2608.00337}; Tim Roughgarden (2013), \emph{Algorithmic Game Theory, Lecture 3: Myerson's Lemma}, Stanford CS364A, \url{https://timroughgarden.org/f13/l/l3.pdf}; Hassidim et al. (2017), full reference on the impact diagram page, \url{https://doi.org/10.1257/aer.p20171027}.
+
+\subsection{Dated intellectual development and available activity evidence}
+\noindent\begin{tabularx}{\textwidth}{p{.14\textwidth}YY}\toprule
+Date/stage & Record used in this revision & Consequence\\\midrule
+PS1 / PS2 & Earlier proposal, auction code, payments and reserved evaluation time & Preserve the access question and earlier artifacts; distinguish old model outputs from robot results.\\
+October 5 & Author's explicit critique that generic CPU allocation did not capture robotics & Queue/pose constraints change feasible sets and the interpretation of utility.\\
+October 12 & Beginning-post draft, supplied FP9--FP10 pairing, Armory reviewer excerpt and written defense in the project discussion & Compare three close papers; state no Armory superiority; propose equal-workload evaluation.\\
+October 14 & Xinrong Sun's self-challenge text: can a reported deadline change utility? & October 20 computation tests joint reports; retain a negative result and redirect to execution-time verification.\\
+October 15 & Research-direction discussion about audited model access & Kept as future exploration; not inserted as completed foundation-model research.\\
+October 20 & Final rubric, fresh computations, migrated sources and new diagrams & Eight named parts, Appendix G, synchronized model outputs and a traceable final package.\\\bottomrule
+\end{tabularx}
+\paragraph{First-hand reflection and behavioral boundary.} The author's own October 14 question expected a possible profitable false deadline. The finite test and conditional argument challenge that expectation and make the next test more precise. This is an author self-reflection, not an independently observed classroom sample. The interaction separates predicted payments, predicted timeliness, confidence and explanation; the distinction follows from the economic counterexample. Original peer-play response files, daily takeaway sheets and handwritten exits are not reconstructed from automated tests.
+\paragraph{Recognition and interview.} A proposed citation for FP10 is: ``Privacy--Coordination Trade-off Award: for making confidentiality and useful drone coordination an explicit strategic question.'' Proposed support is a joint information-delay sensitivity test. This is the retained award draft, not evidence of an issued certificate or completed interview. The evidence index links the supplied Ed comments and distinguishes them from award and interview drafts.
+\paragraph{2056 revision and Nobel foundation.} The 2025 official announcement recognizes Joel Mokyr, Philippe Aghion and Peter Howitt for explaining innovation-driven growth. This motivates asking whether institutions make technological progress accessible; it does not validate this auction or establish growth effects. The author's 2056 aspiration has narrowed from general participation to independently testable incentives and usable access. The 2026 award to Robert E. Hall and Michael Woodford recognizes the microeconomic foundations of macroeconomic stabilization \cite{nobel2026,aea2026}. Compared with the 2025 emphasis on innovation-driven growth, it motivates specifying individual incentives and expectations before making institutional claims. Our proposed extension therefore models repeated access, uncertain service time and expectations about verification. This is a methodological connection, not a contribution to macroeconomic stabilization; no growth or stabilization effect is established here.
+\paragraph{Source for 2025 comparison.} Royal Swedish Academy of Sciences (2025), \emph{The Prize in Economic Sciences 2025: Press Release}, \url{https://www.nobelprize.org/uploads/2025/10/press-economicsciences2025-1.pdf}.
+
+\subsection{Final release audit and record locations}
+Release identifier: \texttt{final-fp9-2026-10-21}. Exact code checksums, tested commits and packaging records accompany \path{evidence/final-release.json}. Run \path{code/robot_model.py}, \path{code/deadline_test.py} and \path{verify-robot.cjs}. The notebook embeds the tested robot model and adds the final challenge. Browser fallback images are under \path{evidence/}. The poster preview, PDF and editable PPTX are under \path{poster/}; the root README embeds the preview and links the PDF. Main-paper results, the worked browser profile and the poster table share the same values and deadlines. The challenge panel displays the separate three-job duration test explicitly.
+
+The formal team repository is \url{https://github.com/dku-comsci-econ206-Autumn2026/-PS2-FP9-ComputeCommons}; the demonstration destination is \url{https://huggingface.co/spaces/dku-comsci-econ206-2026/compute-commons}; the team Overleaf project is \url{https://www.overleaf.com/project/6ac3a483f8fd778ea3fdc65f}. Publication checks for this release are recorded with their actual outcomes, separately from the author's earlier confirmation. The final-week source index preserves the distinction between drafted posts and original posted records. New human observations, reviewer identities or classroom exchanges are not inferred from missing attachments.

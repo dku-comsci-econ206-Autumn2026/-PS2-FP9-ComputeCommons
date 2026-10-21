@@ -1,0 +1,1 @@
+October 21, 2026: all notebook code cells executed sequentially in an empty directory with Python standard library. Both robot outputs and the final challenge JSON match standalone script outputs byte-for-byte / structurally. No external downloads.

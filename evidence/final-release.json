@@ -1,0 +1,40 @@
+{
+  "release": "final-fp9-2026-10-21",
+  "date": "2026-10-21",
+  "author": "Xinrong Sun",
+  "checks": {
+    "main_pages": 2,
+    "total_pages": 12,
+    "original_assertions": 36289,
+    "paired_batches": 300,
+    "joint_bid_deadline_deviations": 88200,
+    "max_deadline_gain": 0,
+    "duration_gain": 8,
+    "legacy_false_eligibility_gain": 4,
+    "python_javascript_field_comparisons": 60,
+    "notebook": "fresh-directory execution and output parity passed",
+    "browser": "local headless interaction, JSON export and duration challenge passed",
+    "poster": "A0 landscape editable native table; PowerPoint PDF export; visual inspection"
+  },
+  "source_sha256": {
+    "code/robot_model.py": "8a1e9e6f5540c3d10cde211c77553f96cfcac5182eb347e04e9ea1db7d9dc766",
+    "code/deadline_test.py": "c621bc000620a28f15625b1cab1658a0f874f8e3ca0fa93f307cffc9bea3abc1",
+    "code/compute_commons_ps2.ipynb": "446e582e64e1adcb416a842e442d3e016de22030404bc87bf4e35725872872bb",
+    "code/robot_results.json": "b15f7ba28df07de8d8312a3983c5900b62ad8f26abebc87b671ddda0bea7e6d4",
+    "code/deadline_results.json": "d8bffe6ef7ddfa842f100fd526d7de6003ea0be016d4add33dd693c8d5b2adf6",
+    "hf_space/index.html": "e851c356d16475bce864bf5f28eaa4e7f7550165514b3366f712abe84c5d6447",
+    "hf_space/robot.js": "820f5c92180e83e54a85765962933e4cdb17ea7411445552fe7991de4d2f501d",
+    "main.tex": "157309c70f4c7a55e46d9a0d72c62d4172f91039f8655543fb4ee7c09a105551",
+    "sections/proposal.tex": "20bbca9ed943bbca0ef029042251a36b121930a6ce99935e249ff1caa7acd7f1",
+    "appendices/supporting.tex": "136bf8553d3a11f72b8d9e5abef243c0d6149d9fcc645019fd2a8562f3f28507",
+    "appendices/final_feedback.tex": "bd06d3c43f712dfb99785509ecdde229f71ceb81e488af752fbb9d3d084171b0",
+    "appendices/final_week.tex": "8d365545a91e8f21c6c6d0edf56a83a34a82c2c5231c2f49e4659335b98f334f",
+    "references.bib": "844d00e2cfce38531d4bca9c963ec126a5f3c097f8b413d4f466735634821815"
+  },
+  "online": {
+    "github": "release publication recorded in final delivery record",
+    "hugging_face": "existing Space found; connector has read-repos but no write scope; final update supplied in upload ZIP",
+    "overleaf": "source compiled locally; hosted project connection timed out; source ZIP supplied"
+  },
+  "evidence": "Synthetic calculations. Named review provenance confirmed by the author; original class participation records remain distinct."
+}

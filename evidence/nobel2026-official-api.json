@@ -1,0 +1,77 @@
+{
+  "awardYear": "2026",
+  "category": {
+    "en": "Economic Sciences",
+    "no": "Økonomi",
+    "se": "Ekonomi"
+  },
+  "categoryFullName": {
+    "en": "The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel",
+    "no": "Sveriges Riksbanks pris i økonomisk vitenskap til minne om Alfred Nobel",
+    "se": "Sveriges Riksbanks pris i ekonomisk vetenskap till Alfred Nobels minne"
+  },
+  "dateAwarded": "2026-10-12",
+  "prizeAmount": 12000000,
+  "prizeAmountAdjusted": 12000000,
+  "links": [
+    {
+      "rel": "nobelPrize",
+      "href": "https://api.nobelprize.org/2/nobelPrize/eco/2026",
+      "action": "GET",
+      "types": "application/json"
+    }
+  ],
+  "laureates": [
+    {
+      "id": "1069",
+      "knownName": {
+        "en": "Robert E. Hall"
+      },
+      "fullName": {
+        "en": "Robert E. Hall"
+      },
+      "portion": "1/2",
+      "sortOrder": "1",
+      "motivation": {
+        "en": "for microeconomic foundations of macroeconomic stabilisation",
+        "se": "för mikroekonomiska fundament för makroekonomisk stabilisering"
+      },
+      "links": [
+        {
+          "rel": "laureate",
+          "href": "https://api.nobelprize.org/2/laureate/1069",
+          "action": "GET",
+          "types": "application/json"
+        }
+      ]
+    },
+    {
+      "id": "1070",
+      "knownName": {
+        "en": "Michael Woodford"
+      },
+      "fullName": {
+        "en": "Michael Woodford"
+      },
+      "portion": "1/2",
+      "sortOrder": "2",
+      "motivation": {
+        "en": "for microeconomic foundations of macroeconomic stabilisation",
+        "se": "för mikroekonomiska fundament för makroekonomisk stabilisering"
+      },
+      "links": [
+        {
+          "rel": "laureate",
+          "href": "https://api.nobelprize.org/2/laureate/1070",
+          "action": "GET",
+          "types": "application/json"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "terms": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/",
+    "license": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#licence",
+    "disclaimer": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#disclaimer"
+  }
+}
