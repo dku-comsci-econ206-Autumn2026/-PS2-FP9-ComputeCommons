@@ -1,5 +1,5 @@
 {
-  "release": "final-fp9-2026-10-21",
+  "release": "final-fp9-2026-10-21-r2",
   "date": "2026-10-21",
   "author": "Xinrong Sun",
   "checks": {
@@ -28,13 +28,13 @@
     "sections/proposal.tex": "20bbca9ed943bbca0ef029042251a36b121930a6ce99935e249ff1caa7acd7f1",
     "appendices/supporting.tex": "136bf8553d3a11f72b8d9e5abef243c0d6149d9fcc645019fd2a8562f3f28507",
     "appendices/final_feedback.tex": "bd06d3c43f712dfb99785509ecdde229f71ceb81e488af752fbb9d3d084171b0",
-    "appendices/final_week.tex": "8d365545a91e8f21c6c6d0edf56a83a34a82c2c5231c2f49e4659335b98f334f",
+    "appendices/final_week.tex": "03cc73201bc901e150e36ed6aa83d4284c4e17fad26513b386feea5481a6c180",
     "references.bib": "844d00e2cfce38531d4bca9c963ec126a5f3c097f8b413d4f466735634821815"
   },
   "online": {
-    "github": "release publication recorded in final delivery record",
-    "hugging_face": "existing Space found; connector has read-repos but no write scope; final update supplied in upload ZIP",
-    "overleaf": "source compiled locally; hosted project connection timed out; source ZIP supplied"
+    "github": "Publication recorded in delivery record",
+    "hugging_face": "Running, commit 836cd46af5cd3ba955fd6ebf551e4c0946f40e06",
+    "overleaf": "Existing project updated and compiled; classroom confirmation revision supplied in final source"
   },
-  "evidence": "Synthetic calculations. Named review provenance confirmed by the author; original class participation records remain distinct."
+  "evidence": "Synthetic research results; classroom TED-style talk, cross-group sharing, Yiqiao Liu feedback and submitted takeaway notes confirmed complete by Xinrong Sun."
 }

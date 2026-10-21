@@ -6,7 +6,7 @@
 
 FP9 · Xinrong Sun · COMSCI/ECON 206 · Professor Luyao Zhang
 
-Final release: **final-fp9-2026-10-21** (October 21, 2026). The original author identified that the previous interchangeable-window auction lacked robotics specificity. This revision studies **usable** inference access: action-buffer expiry and moving-target pose freshness restrict which allocations can deliver value. All numerical evidence is synthetic; no trained policy, robot trial or completed human study is claimed.
+Final release: **final-fp9-2026-10-21-r2** (October 21, 2026). The original author identified that the previous interchangeable-window auction lacked robotics specificity. This revision studies **usable** inference access: action-buffer expiry and moving-target pose freshness restrict which allocations can deliver value. All numerical evidence is synthetic; no trained policy, robot trial or completed human study is claimed.
 
 ## Reproduce
 
@@ -92,3 +92,7 @@ Xinrong Sun is the sole author. Her decisions distinguish usable access from nom
 We thank Prof. Luyao Zhang for the course framework, project guidance and templates; Prof. Kenneth S. (Ken) Rogerson for feedback on improving the mechanism; and Han Zhang for sharing his project and urging us to distinguish robot inference from ordinary CPU allocation. Yiqiao Liu introduced Armory, challenged the novelty claim and proposed an equal-workload comparison through Ed and oral feedback; she also advised on referencing prior work in class. Xuantong Fu (FP3) identified the false-eligibility gain and called for reproducible, consistent artifacts. Muhan Chen provided oral and handwritten feedback. Tencent's Shanghai office provided the industry field-learning setting; the Shanghai Science and Technology Museum provided inspiration; and the COMSCI/ECON 206 classroom community enabled presentations and discussion. We credit Python, JavaScript, the course/ACM templates and cited research. Codex assisted revision and verification, as disclosed in Appendix A.
 
 Original code is MIT licensed. Course/ACM templates and third-party material retain their terms. Official SDG assets: https://www.un.org/sustainabledevelopment/news/communications-material/
+
+## Classroom participation
+
+Xinrong Sun confirmed completion of the classroom TED-style presentation, cross-group project sharing, feedback from Yiqiao Liu, and submission of all takeaway class notes. The author-confirmed activity record is in Appendix G.6 and `evidence/final-week-index.md`.

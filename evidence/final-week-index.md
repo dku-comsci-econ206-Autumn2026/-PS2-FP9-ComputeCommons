@@ -10,9 +10,13 @@
 - Prof. Kenneth S. (Ken) Rogerson: mechanism-improvement feedback, as confirmed by the author.
 - Xinrong Sun: self-challenge and research-specificity decisions from the project discussion. October 20 computational tests are subsequent evidence, not backdated class observations.
 
-## Activity evidence boundaries
+## Completed classroom activities and submissions
 
-The supplied records do not include the complete joint duet thread with exactly three shared stress-test papers, a completed award/interview record, roundtable responses, three challenge answers, or daily takeaway/handwritten exit originals. Draft recognition and future support in Appendix G are labeled as proposals. These participation records must come from the actual class activities; this final paper does not replace them.
+Xinrong Sun confirmed on October 21, 2026 that she presented the project in a classroom TED-style talk, shared her work with different groups and received feedback from Yiqiao Liu. She also clarified that the takeaways were class notes, that they had all been submitted, and that the classroom activities and associated submissions were complete. This author confirmation supersedes the earlier checklist entries that treated unavailable local attachments as unfinished activities.
+
+Yiqiao Liu's specific feedback is preserved above: clarify the contribution beyond Armory and compare usable completion, welfare and access under identical workloads. The paper records how this feedback informed its novelty statement and future research roadmap. Classroom presentation and reflection are learning activities; the reported quantitative tests are computational results.
+
+Source: Xinrong Sun's direct confirmation in this project conversation, October 21, 2026; existing Ed links above provide the associated peer-feedback references.
 
 ## Nobel comparison
 
